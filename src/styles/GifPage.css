@@ -1,0 +1,36 @@
+.autor{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem auto;
+    background-color: rebeccapurple;
+    width: 400px;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.gif-img{
+    width: 500px;
+    height: 500px;
+}
+
+.autor img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.autor-name{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+}
+
+.autor-name img{
+    width: 30px;
+    height: 30px;
+}
