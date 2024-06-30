@@ -1,4 +1,4 @@
-const API_KEY = 'dIJrma20pSU6ymMwWnDbiaT7NFHeAGVa';
+import { API_KEY } from './settings';
 
 export function getGif ({ id }) {
   const API_URL = `https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`;

@@ -1,4 +1,4 @@
-const API_KEY = 'dIJrma20pSU6ymMwWnDbiaT7NFHeAGVa';
+import { API_KEY } from './settings';
 
 export function getGifs ({ keyword = 'morty' } = {}) {
   const API_URL = `https://api.giphy.com/v1/gifs/search/?api_key=${API_KEY}&q=${keyword}&limit=10`;

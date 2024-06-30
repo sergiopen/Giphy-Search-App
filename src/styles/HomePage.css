@@ -1,0 +1,39 @@
+ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+    width: 35%;
+    margin: .5rem auto;
+}
+
+ul li a{
+    display: block;
+    background-color: rgb(23, 23, 23);
+}
+
+ul li a:hover{
+    background-color: rgba(61, 61, 61, 0.719);
+}
+
+.input-search{
+    background-color: rgb(55, 54, 54);
+    border: none;
+    width: 250px;
+    padding: .75rem;
+    border-radius: 8px 0 0 8px;
+    margin-top: 1rem;
+    outline: none;
+}
+
+.input-submit{
+    height: 39px;
+    border-radius: 0 8px 8px 0;
+    border: none;
+    background-color: rgb(55, 54, 54);
+    cursor: pointer;
+}
+
+.input-submit:hover{
+    background-color: rebeccapurple;
+}
