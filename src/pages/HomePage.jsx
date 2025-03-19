@@ -40,7 +40,6 @@ function HomePage () {
   };
 
   const lastKeyWord = (!localStorage.getItem('lastKeyWord') || localStorage.getItem('lastKeyWord') === '' ? 'random' : localStorage.getItem('lastKeyWord'));
-
   return (
     <>
       <header>
