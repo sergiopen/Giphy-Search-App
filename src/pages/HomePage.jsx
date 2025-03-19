@@ -6,12 +6,15 @@ import TrendingGifs from '../components/TrendingGifs';
 import { useTrendingGifs } from '../hooks/useTrendingGifs';
 import { getAutocomplete } from '../services/getAutocomplete';
 import { useDebouncedCallback } from 'use-debounce';
+import usePageTitle from '../hooks/usePageTitle';
 
 function HomePage () {
   // eslint-disable-next-line no-unused-vars
   const [path, pushLocation] = useLocation();
   const [keyword, setKeyWord] = useState('');
   const [autoComplete, setAutoComplete] = useState([]);
+
+  usePageTitle('Inicio');
 
   const { trendingGifs } = useTrendingGifs();
 
@@ -29,22 +32,25 @@ function HomePage () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    pushLocation(`/search/${keyword}`);
+
+    const finalKeyword = keyword.trim() === '' ? 'random' : keyword;
+
+    pushLocation(`/search/${finalKeyword}`);
     localStorage.setItem('lastKeyWord', keyword);
   };
 
-  const lastKeyWord = (!localStorage.getItem('lastKeyWord') ? 'random' : localStorage.getItem('lastKeyWord'));
+  const lastKeyWord = (!localStorage.getItem('lastKeyWord') || localStorage.getItem('lastKeyWord') === '' ? 'random' : localStorage.getItem('lastKeyWord'));
 
   return (
     <>
       <header>
         <form onSubmit={handleSubmit}>
           <input className='input-search' onChange={handleChange} type="text" placeholder='Buscar gif'/>
-          <input className='input-submit' type="submit" value="Search" />
+          <input className='input-submit' type="submit" value="Buscar" />
           <ul>
             {
               autoComplete.map((result, index) => (
-                <li key={index}><a href={'/search/' + result.name}>{result.name}</a></li>
+                <li key={index}><a onClick={() => localStorage.setItem('lastKeyWord', result.name)} href={'/search/' + result.name}>{result.name}</a></li>
               ))
             }
           </ul>

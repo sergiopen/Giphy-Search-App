@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { getGif } from '../services/getGif';
 import '../styles/GifPage.css';
 import verifiedIcon from '../assets/verified-icon.png';
+import usePageTitle from '../hooks/usePageTitle';
 
 function GifPage ({ params }) {
   const { id } = params;
   const [data, setData] = useState();
+
+  usePageTitle('Gif Info');
 
   useEffect(() => {
     getGif({ id }).then(setData);

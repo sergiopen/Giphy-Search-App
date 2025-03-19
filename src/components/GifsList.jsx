@@ -17,6 +17,10 @@ function GifsList ({ keyword }) {
     />;
   }
 
+  if (gifs.length < 1) {
+    return <h2>No se encontraron gifs con ese nombre</h2>;
+  }
+
   return (
     <div className='gif-container'>
       {
